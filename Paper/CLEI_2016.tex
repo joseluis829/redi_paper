@@ -1,0 +1,1316 @@
+
+%% bare_conf_compsoc.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE Computer
+%% Society conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference,compsoc]{IEEEtran}
+% Some/most Computer Society conferences require the compsoc mode option,
+% but others may want the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference,compsoc]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+% *** LANGUAGE PACKAGES ***
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+%
+%
+%
+\usepackage{listings}
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later.
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+  \usepackage{graphicx}
+  \graphicspath{{images/}}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{REDI\\ Semantic Repository of Ecuadorian Researchers}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Michael Shell}
+\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
+Georgia Institute of Technology\\
+Atlanta, Georgia 30332--0250\\
+Email: http://www.michaelshell.org/contact.html}
+\and
+\IEEEauthorblockN{Homer Simpson}
+\IEEEauthorblockA{Twentieth Century Fox\\
+Springfield, USA\\
+Email: homer@thesimpsons.com}
+\and
+\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+\IEEEauthorblockA{Starfleet Academy\\
+San Francisco, California 96678-2391\\
+Telephone: (800) 555--1212\\
+Fax: (888) 555--1212}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page (and note that there is less available width in this regard for
+% compsoc conferences compared to traditional conferences), use this
+% alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+El abstract va aquí.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introducción}
+% no \IEEEPARstart
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+En construcción:
+
+El repositorio permite describir semánticamente a los autores y sus
+publicaciones. De esta manera se pretende aumentar las posibilidades de
+descubrimiento de información entre autores, publicaciones y fuentes. Para la
+creación del repositorio semántico se utilizan como base las  metodologías de
+publicación de datos enlazados, así como las mejores prácticas recomendadas por
+la comunidad científica en el área de la Web Semántica.
+
+Los resultados que ofrecen los servicios implementados para extraer autores y
+sus publicaciones son utilizados para poblar una red de ontologías. Las
+ontologías seleccionadas para representar el conocimiento fueron analizadas
+previamente; entre los modelos ontológicos que fueron
+analizados están BIBO, SKOS, DC, FOAF, etc.
+
+Possible idea to include: Although there are other applications that do
+something similar (store authors, publications, allow search functionality),
+they do not relate authors automatically nor use semantic technologies.
+
+%\hfill mds
+ 
+%\hfill August 26, 2015
+
+
+\section{Trabajos Relacionados}
+
+En \cite{AIBM}, los autores presentan un sistema que permite recuperar información de publicaciones científicas. La información recuperada es anotada semanticamente y el sistema permite filtrar resultados de acuerdo a facetas semanticas. Las anotaciones son realizadas mediante un rule-based que identifica pistas lingüísticas especificas en una ontologia lingüística.
+
+
+\section{Arquitectura del Sistema}
+
+En esta sección, describimos la arquitectura general del sistema que nos permite
+extraer información de investigadores ecuatorianos, sus
+publicaciones, para luego agruparla automáticamente y finalmente mostrar los
+resultados al usuario final. En este proceso hemos identificado cinco pasos
+principales:
+
+\begin{enumerate}
+ \item \textit{Extracción de investigadores desde repositorios de
+universidades ecuatorianas:} El primer paso consiste en extraer datos de
+autores de trabajos académicos que se encuentran en los repositorios digitales
+de las instituciones miembros de la Red CEDIA\footnote{Consorcio
+Ecuatoriano para el Desarrollo de Internet
+Avanzado (https://www.cedia.org.ec)}. Para esto, creamos un servicio que
+permite consultar la información en formato RDF mediante consultas SPARQL.
+Luego procedemos a almacenar los datos extraídos mediante un servicio de
+almacenamiento, según el modelo ontológico seleccionado para almacenar la
+información de posibles autores. 
+ \item \textit{Extracción de publicaciones desde fuentes externas:} Una vez que
+tenemos establecidos los datos de posibles investigadores, nuestro sistema
+procede a consultar fuentes externas\footnote{Scopus, DBLP, Microsoft
+Academics} para obtener información acerca de las publicaciones de los autores
+identificados, en caso de que existan. Para esto se
+utilizan APIs que permiten el acceso a las diferentes fuentes de datos. Si una
+persona posee publicaciones en una fuente externa, entonces verificamos que se
+trata de un investigador y procedemos a almacenar la información relevante
+acerca de sus trabajos (título, palabras clave, coautores, fecha de publicación,
+resumen, etc.) según un modelo de datos definido para describir artículos
+científicos en formato RDF. Las fuentes de datos son descritas de forma
+automática para
+mejorar el enriquecimiento de los datos tanto de investigadores como de
+publicaciones. 
+ \item \textit{Integración y almacenamiento de autores y publicaciones:} La
+información que se extrajo en los pasos anteriores se guarda en grafos dentro
+de una base de datos Triple Store que permite guardar la información en formato
+RDF, según el modelo ontológico seleccionado. En un principio, los datos de
+autores se almacenan en un grafo de autores, mientras que los datos de
+publicaciones se almacenan en un grafo según la fuente externa desde la cual se
+extrajeron. En este punto, existe un proceso de integración de la información
+que valida ciertos aspectos de la coherencia de la información y la consolida en
+un grafo central sobre el cual se pueden realizar consultas a través del
+lenguaje SPARQL.
+ \item \textit{Agrupamiento y detección de patrones:} En esta parte del
+proceso, se realiza una detección de patrones para agrupar las entidades según
+los datos almacenados. En este proceso se analiza el repositorio central para
+detectar asociaciones entre los datos y agrupar entidades similares. Cada grupo
+recibe un nombre de acuerdo al parámetro que relaciona a sus elementos. 
+ \item \textit{Visualización de resultados:} Finalmente implementamos una
+aplicación web que permite la visualización de los datos enlazados de
+investigadores, publicaciones, y los patrones descubiertos en el paso anterior.
+\end{enumerate}
+
+
+
+
+Los componentes del sistema se presentan en la Figura
+\ref{fig:componentsDiagram}.\\
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.43]{componentsDiagram}
+  \caption{Componentes del sistema}
+  \label{fig:componentsDiagram}
+\end{figure}
+
+
+\subsection{Selección del repositorio semántico}
+
+Justificar la selección de Marmotta como nuestra plataforma Linked Data.
+
+Apache Marmotta fue seleccionada como plataforma para soportar el repositorio
+semántico, debido a que una gran parte del equipo de trabajo tiene experiencia
+con esta herramienta, tanto en su utilización, como en la forma de extender la
+plataforma con nuevas extensiones. El objetivo de Apache Marmotta es
+proporcionar una implementación abierta para Linked Data que puede ser
+utilizada, extendida, y desplegada fácilmente por las organizaciones que quieren
+publicar datos enlazados o construir aplicaciones personalizadas en Linked Data.
+
+Software and tools used:
+\begin{itemize}
+ \item Linked Data Platform: Marmotta
+ \item AngularJS
+ \item D3.js 
+ \item Bootstrap
+ \item Apache Mahout 
+ \item PostgreSql
+ \item Java
+\end{itemize}
+
+En las secciones subsiguientes incluimos una descripción más detallada de cada
+uno de los pasos identificados en la arquitectura
+general del sistema.  
+
+\section{Módulo de Autores}
+
+Este módulo permite la extracción de datos de autores desde los repositorios
+digitales de cada una de las universidades miembros de CEDIA, a través de la
+plataforma DSPACE. El proyecto ``Aplicación de Linked Open Data a
+Repositorios CEDIA'' transformó la información en DSPACE a RDF, la cual puede
+ser consultada a través de varios SPARQL Endpoints. Nuestro sistema extrae
+dicha información de autores a través de un servicio que consulta los
+endpoints de cada universidad. Debido al crecimiento
+de la Red CEDIA, nuestro servicio también considera la administración y
+mantenimiento de los endpoints a consultar. Luego almacenamos los datos
+extraídos en un grafo de autores dentro de la base de datos Triple
+Store administrada por la plataforma Apache Marmotta,
+siguiendo el modelo ontológico seleccionado para representar
+la información extraída.\\
+
+Para realizar estos pasos, hemos implementado un
+servicio de extracción de autores (ver Figura
+\ref{fig:extraccionAutoresServicio}) y un servicio de almacenamiento de autores
+(ver Figura \ref{fig:cargaAutoresServicio}), los cuales constituyen el módulo de
+autores. Este módulo está implementado sobre la plataforma Marmotta (ver
+Figura \ref{fig:arqAuthorModule}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{authorArq}
+\caption{Arquitectura General del Módulo de Autores}
+\label{fig:arqAuthorModule}
+\end{figure}
+
+La figura \ref{fig:arqAuthorModule} describe cada uno de los componentes del
+módulo de autores. Así mismo, cada componente interactúa con otro como se
+describe a continuación:
+
+\begin{enumerate}
+
+	\item El usuario final utiliza el módulo de Autores a través de la
+interfaz web.
+	\item El usuario puede agregar, eliminar y listar las fuentes de datos
+de autores.
+	\item Para realizar las acciones del paso anterior, los servicios
+interactúan con el
+módulo ENDPOINTS MANAGER SERVICE \textbf{(Especificar de donde salió esto)}, que
+se encarga de insertar y consultar la
+información relacionada con las fuentes de datos de autores. Para este proceso,
+el ENDPOINTS MANAGER SERVICE solicita a QUERIES SERVICE \textbf{(Especificar de
+donde salió esto)} las sentencias SPARQL
+necesarias para las diferentes operaciones.
+	\item El usuario puede ejecutar el proceso de extracción y carga de
+autores a través de la interfaz web.
+	\item Para el proceso de extracción y carga de autores los servicios
+se comunican con el módulo AUTHORS SERVICE \textbf{(Especificar de donde salió
+esto)}, el cual es encargado de consultar la
+información desde las fuentes de datos e insertar la información a la plataforma
+con ayuda del QUERIES SERVICE para la obtención de las sentencias SPARQL.
+	
+\end{enumerate}
+
+
+
+\subsection{Servicio para extracción de autores}
+\label{subsecspea}
+
+El proceso implementado permite realizar una extracción controlada de los datos
+de autores. En primer lugar, se extrae desde los repositorios digitales de
+las universidades una lista completa de las URIs  de los autores se verifica si
+alguna de las URIs aún no ha sido cargada en la plataforma (LOD
+Plataform). En el caso de que la URI del autor aún no se encuentre en la
+plataforma, entonces se procede a extraer toda la información relacionada con
+ese autor.\\
+
+En esta sección se describe la
+implementación de un servicio para automatizar la extracción de autores desde
+los repositorios de los miembros de la Red CEDIA.
+
+En la figura \ref{fig:extraccionAutoresServicio} se muestra la arquitectura del
+servicio de extracción de autores. Esta arquitectura esta conformada por los
+procesos que se describen a continuación.
+
+\begin{itemize}
+    \item Connect to Sparql ENDPOINT: Este proceso permite crear las conexiones
+hacia cada una de las fuentes de datos de los autores. Este proceso utiliza la
+librería \textit{Linked Data
+Client}\footnote{http://marmotta.apache.org/ldclient/index.html} de
+Marmotta\footnote{http://marmotta.apache.org}.
+    \item Get Authors URIs: Luego de establecer la comunicación con las fuentes
+de autores, se extrae a todos los recursos (URIs) que seas de tipo Persona. Este
+proceso sirve para tener en memoria a todas las URIs.
+    \item Ask URIs en LOD Plataform: Por cada URI cargadas n memoria se valida
+si previamente ha sido cargada a nuestra plataforma, caso contrario, la URI es
+identificada como un recurso nuevo y se continua con la extracción de sus
+atributos.
+
+         \item Get Properties and Values of New URI: Es proceso es el encargado
+de extraer todas los atributos de cada URI que ha sido identificada com orecurso
+nueva.
+         \item Endpoints Manager Service: Este proceso es el que permite que el
+usuario registre las fuentes de informacion. Para cada registro el usuario debe
+ingresar datos como el nombre de la Institucion, Ciudad, Provincia, Latitud y
+Longitud.
+
+\end{itemize}
+
+ 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{extraccionAutoresServicio}
+\caption{Arquitectura del servicio de Extracción de Autores}
+\label{fig:extraccionAutoresServicio}
+\end{figure}
+
+El servicio implementa todos los procedimientos descritos previamente sobre cada
+uno de los SPARQL ENDPOINTS disponibles.
+
+
+\subsubsection{Servicio para almacenar autores en un repositorio
+semántico}
+
+Los autores extraídos según el proceso descrito anteriormente
+deben ser almacenados en un repositorio común, con el fin de tener una única
+fuente de información sobre autores. Los datos de los autores provenientes de
+las diferentes fuentes de
+información cuentan con características o propiedades básicas para el
+modelamiento de una persona, tales como: nombre, apellido, etc. Para modelar
+estos datos utilizamos el modelo ontológico FOAF, que permite
+describir semánticamente a las personas, sus actividades y sus relaciones con
+otras personas. En la figura \ref{fig:modOntologyAutores} se muestra el
+emparejamiento ejecutado entre los atributos de la base de datos de cada fuente
+de información y los conceptos en la ontología.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{modOntologyAutores}
+\caption{Modelo Ontológico para representación de Autores}
+\label{fig:modOntologyAutores}
+\end{figure}
+
+Los datos de los autores fueron modelados siguiendo las directrices del modelo
+ontológico descrito en la sección anterior. Para cargar los datos de los autores
+al repositorio semántico unificado se desarrolló un servicio que utiliza el
+protocolo UPDATE de SPARQL. La ejecución del servicio permite la inserción de
+los datos de los autores en la plataforma LOD. En la figura
+\ref{fig:cargaAutoresServicio} se muestra la arquitectura del servicio
+desarrollado, la cual toma com datos de entrada el servicio de extracción de
+autores descrito previamente. A continuación se describe cada uno de los
+procesos ilustrados en la figura \ref{fig:cargaAutoresServicio}.
+
+\begin{itemize}
+	\item Queries Service: Es un servicio desarrollado en un modulo
+independiente que devuelve las consultas SPARQL solicidatas por los otros
+servicios. En este caso, el servicio para almacenamiento de autores, solicitara
+al Queries Service la consulta para insertar la información de los autores en la
+plataforma. 
+	\item Build Update Queries: Se identifica las propiedades y valores de
+cada persona (\textit{sujeto}, \textit{predicado} y \textit{objeto}). La
+inserción se hace netamente con SPARQL. Posteriormente, identifica si el
+\textit{objeto} es \textit{recurso http} o  \textit{literal}, en caso de ser
+\textit{literal} se analiza el tipo de dato (String, int, etc.). Con estos
+análisis el servicio se encarga de construir correctamente la tripleta que sera
+insertada.    
+	\item Insert Triplets in LODP: Este proceso se encarga de llamar al
+servicio \textit{update} de marmotta para insertar la tripleta en el
+repositorio.
+\end{itemize}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{cargaAutoresServicio}
+\caption{Arquitectura del servicio de Almacenamiento de Autores}
+\label{fig:cargaAutoresServicio}
+\end{figure}
+
+\subsubsection{Servicio para extracción de autores externos}
+
+En esta sección se describe el proceso para la extracción de autores externos.
+En este proyecto, se entiende por autores externos a los coautores de una
+publicación de un autor ecuatoriano. En la figura \ref{fig:coautoresexternos} se
+ilustra la relación entre coautores externos y un autor que se encuentra en el
+repositorio local.
+
+Mediante una interfaz gráfica, el usuario solicita las publicaciones de un autor
+externo. Algunos de los coautores no son ecuatorianos, en este caso el sistema
+consulta (en línea) a fuentes como SCOPUS, DBLP, Microsoft, etc., para extraer
+las publicaciones y los datos de ese autor. Estos datos son modelados y enviados
+al frontend para visualizarlos.
+
+En este trabajo, de momento, no se ha considerado el caso de que alguna de las
+fuentes de publicaciones actualice información relacionada con los autores
+externos. 
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{extraccioncoautores}
+\caption{Estructura de la información.}
+\label{fig:coautoresexternos}
+\end{figure}
+
+Los datos de los autores se extraen desde diferentes fuentes de información
+tales como DBLP o SCOPUS. El modulo de extracción de autores, obtiene los datos,
+verifica si el autor aún no ha sido cargado al repositorio y, finalmente inserta
+los datos en un grafo centralizado. Cada autor además tiene una propiedad extra
+``PROVENANCE'', la cual permite identificar los atributos de la fuente de
+información del Autor ( Nombre de la Institución, Ciudad, Provincia, Latitud,
+Longitud, etc.).
+
+\subsubsection{Strategy for updating the data}
+
+En el procedimiento para extracción de autores, se dispone de una actividad para
+la verificación de existencia de datos. Es decir, cada vez que se realiza una
+actualización de información el módulo pregunta si un autor es reconocido como
+un nuevo dato o aún no se encuentra en el repositorio; solo en el caso de ser
+reconocido como un nuevo autor, se extrae toda la información y se carga al
+repositorio.  Las consultas se realizan con el protocolo SPARQL mediante
+consultas ASK. Estas consultas devuelven un valor de verdadero o falso, según
+sea el caso.
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Implementación del módulo de autores}
+
+Esta sección muestra los resultados de la implementación del módulo para la
+extracción de autores sobre la plataforma Marmotta. En la Figura
+\ref{fig:moduloAutores1} se muestra la pantalla principal del módulo, donde se
+puede identificar las acciones que permite ejecutar el módulo.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3] {moduloAutores1}
+\caption{Modulo de Autores: Ejecutando la Carga de Autores}
+\label{fig:moduloAutores1}
+\end{figure}
+
+El módulo de autores cuenta con un administrador de endpoints, el cual permite
+agregar o eliminar estas entidades. Los endpoints son leidos por el módulo para
+extraer la información de cada uno de ellos. En la figura
+\ref{fig:moduloAutores2} se muestra la interfaz de usuario donde se puede
+identificar el formulario de datos para el registro de un endpoint y también el
+listado de los endpoints actualmente cargados en la plataforma.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.25]{moduloAutores2}
+\caption{Módulo de Autores: Configuración de Endpoints}
+\label{fig:moduloAutores2}
+\end{figure}
+
+
+Es importante recalcar que nuestra plataforma está orientada a investigadores,
+pero las personas identificadas en este proceso son autores de una amplia
+variedad de trabajos
+(incluyendo tesis de pregrado, postgrado, reportes técnicos, etc.). Debido a
+esto, restringimos nuestro alcance a autores que cuentan con publicaciones
+indexadas, a los cuales denominamos ``Investigadores''. En la siguiente sección
+comprobamos qué autores poseen trabajos de investigación para así trabajar
+exclusivamente con ellos.
+
+\section{Extraction of publications from external sources}
+
+- Paper by Zumba and Zumba \\ \\
+
+Once we have extracted the authors from the DSPACE platform, we need to retrieve
+and store information about the author's publications (like title, coauthors,
+keywords, abstract, date of publication, etc.), in case they exist. To achieve
+this goal, we create a data model that describes a scientific article with their
+authors, keywords, and data sources.\\
+
+The information about publications from Ecuadorian researchers is extracted from
+several external data sources that provide an interface (API) to query
+information about scientific publications. Examples of this type of data sources
+are Microsoft Academics, DBLP, Scopus and Google Scholar. They normally include
+different search criteria, such as general search, search by authors,
+publications, etc.\\
+
+The quality of the query results varies depending on the interface that each
+source offers. Problems associated to keyword search can arise, such as
+redundant information, incorrect information retrieval, or empty result sets.
+Those cases can appear when the user asks a complex query and the search
+parameters are not correctly set, or the data interface is not powerful enough
+to support those type of queries.\\
+
+In order to correct and mitigate some of those problems, we propose the use of
+semantic technologies to describe scientific publications. Through that kind of
+technologies, we want to ease (and possibly) improve the search of information,
+with the addition of clustering publications in similar research areas. In our
+case we use the interfaces of Microsoft Academics, DBLP and Scopus as
+publication?s data sources (Google Scholar is not included because of the lack
+of an API to extract information about publications).\\
+
+Ideas for this section:
+
+- Service to extract publications from Digital Repositories
+Module to retrieve external bibliographical sources
+
+- Service to store publications in a semantic repository
+
+- Description of the algorithm for integration of authors and publications)
+
+- Description of the algorithm that allows the desambiguation of data about
+authors and publications
+
+- Methods to update the data about publications
+
+
+\subsection{Implementación del  módulo de publicaciones}
+
+Los servicios de extracción y almacenamiento de publicaciones descritos en el
+Paquete de Trabajo 3, han sido integrados dentro de la plataforma Marmotta. A
+continuación se describe cada servicio implementado para el módulo de
+publicaciones.
+
+\subsubsection{Extracción de publicaciones desde DBLP y Microsoft Academics}
+
+Las fuentes de publicaciones DBLP y Microsoft Academics comparten las mismas
+características de implementación dentro de la plataforma de Marmotta. En la
+figura \ref{fig:moduloPublicaciones1} se muestra un ejemplo del servicio para
+extracción de publicaciones implementado sobre la plataforma. Como se describe
+en el Paquete de Trabajo 3, ambos servicios extraen la información con su
+estructura nativa y almacenan sus datos en un grafo que se crea de forma
+automática para cada una de las fuentes de información (DBLP y Microsoft
+Academics en nuestro caso).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{moduloPublicaciones1}
+\caption{Modulo de Publicaciones: Obtener datos desde el proveedor}
+\label{fig:moduloPublicaciones1}
+\end{figure}
+
+\subsubsection{Extracción de publicaciones desde Scopus}
+
+Al igual que el servicio implementado para la extracción de publicaciones desde
+DBLP y Microsoft Academics, el servicio para SCOPUS extrae la información con su
+estructura nativa y la almacena en un grafo que se crea automáticamente en la
+plataforma. Sin embargo, la información que se extrae desde Scopus sobre los
+autores y sus publicaciones son utilizadas por la plataforma para la validación
+de la información extraída. Los datos presentados al usuario son descritos con
+indicadores que reflejen esta validación.
+
+En la figura \ref{fig:grafos} se muestra un listado de los grafos que han sido
+creados al momento de la extracción y almacenamiento de la información de cada
+fuente de datos.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.5]{grafos}
+\caption{Listado de grafos creados sobre Marmotta}
+\label{fig:grafos}
+\end{figure}
+
+\section{Integration and storage of publications} 
+
+
+
+\subsubsection{Envío de información desde los grafos proveedores hasta el grafo
+central}
+
+Como se muestra en la arquitectura de almacenamiento (Indicar figura), los datos
+que se encuentran en los grafos de proveedores de
+publicaciones se extraen y se envían hasta el grafo centralizado almacenado en
+la plataforma. En este mismo grafo se encuentran los datos de los autores. Una
+vez almacenados todos los datos desde los diferentes proveedores, se puede
+consultar la información mediante consultas SPARQL o haciendo uso de los
+servicios de visualización. En la figura \ref{fig:moduloPublicaciones2} se
+muestra un ejemplo de una captura de pantalla que muestra la ejecución de un
+servicio de carga de publicaciones al grafo centralizado.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{moduloPublicaciones2}
+\caption{Carga de publicaciones desde los grafos proveedores hasta el grafo
+centralizado.}
+\label{fig:moduloPublicaciones2}
+\end{figure}
+
+
+El modelo semántico de investigadores definido fue implementado en el
+repositorio de Marmotta, el cual ofrece un servicio de importación de
+información (import files). El modelo semántico, mostrado en la figura
+\ref{fig:datamodel} fue implementado en base a una red de ontologías que
+satisfacen las necesidades del repositorio semántico de investigadores. La
+implementación de la red de ontologías fue ejecutado mediante el uso de la
+herramienta PROTEGE.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{datamodel}
+\caption{Modelo semántico implementado sobre el repositorio.}
+\label{fig:datamodel}
+\end{figure}
+
+Utilizando el servicio IMPORT de la plataforma Marmotta se efectuaron la carga
+de datos desde las diferentes fuentes de información. Este servicio permite la
+importación de archivos en diferentes formatos tales como OWL, RDF, etc. La
+figura \ref{fig:marmottaimport} muestra un ejemplo del servicio IMPORT dentro de
+la plataforma.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4]{marmottaimport}
+\caption{Servicio IMPORT de archivos en la plataforma Marmotta }
+\label{fig:marmottaimport}
+\end{figure}
+
+
+
+\section{Clustering and pattern detection}
+
+- Paper by Zumba and Zumba \\
+
+\section{Visualization of Results}
+
+In this part, we design and implement a web application that allows to visualize
+the linked data from the researchers, as well as the data that represents the
+patterns discovered in the modules described before. The objective of this
+application is to link the different views in a complete and interactive
+experience.\\
+
+\textbf{Front-end} \\
+
+The front-end architecture is defined according to the structure recommended for
+the framework AngularJS. The view layer contains a series of paths that allow
+the discover of new information; then, it has a controller that obtain
+information and send it to the directives. The directives create visualization
+components that show the information and contain links to navigate to other
+views about an entity or category.
+In our prototype, the graphical models are defined just for our bibliographical
+domain, not for any data model.\\
+
+\textbf{Service - SPARQL Query:} A SPARQL service was implemented to retrieve
+information
+through queries including \textit{CONSTRUCT} or \textit{DESCRIBE} query forms.
+To do this, we use the SPARQL module and the REST service included in Marmotta.
+The response is serialized as RDF with JSONLD format, which is used by the
+directives to use later in the visualization components. Using serialized data,
+we avoid the lost of information about the model represented in the endpoint.
+
+\subsubsection{General description of the services available in the platform}
+
+Models of visualization \newline
+
+
+\textbf{Main Page and Pie Charts:} It allows the user to visualize consolidated
+information
+in categories. If the user clicks on a section of the pie chart, the application
+redirects to a different view that enables the user to discover new information.
+
+\textbf{Explorable Tree:} When a user searchers a researcher, the application
+displays
+an author and publications tree that includes information about its
+publications, coauthors, authors related by clustering, etc. If the coauthors
+are not included in our repository, they are considered external authors and the
+system downloads their information and saves it in a graph. When that external
+author is consulted again, the system retrieves its information instead of
+searching and downloading everything again.
+Authors related with the search that the user input are shown in groups. One
+group lists authors related to publications and other group lists authors
+related through the clustering process. Options to export information about
+authors are available in this view.
+
+\textbf{Keywords Cloud:} It presents a cloud of the most common keywords
+associated to
+publications in the platform. If the user clicks on a keyword, a list of
+publications that contain that keyword is shown. This view also has an option to
+filter the keywords in the cloud by category; also, it displays a list of
+related authors by keyword or clustering that links to the explorable tree.
+
+\textbf{Group By:} It allows the grouping of researchers based on a research
+area and
+the institution related to that publication. 
+
+\textbf{Map View:} This view shows the Geo-localization of the authors that work
+in a
+research topic. It draws groups of researchers in a map, showing the institution
+where they belong.
+
+\textbf{Clustering By Research Area:} It allows to visualize the clusters by
+research area, according to the grouping defined by the clusterization process.
+The application displays various groups of publications, related by their
+keywords. Additional information is shown when the user moves the mouse pointer
+over each node.
+
+\textbf{Clusters By Keyword:} The system displays a cloud of keywords. If the
+user clicks one of them, a new cloud of clusters that contain that keyword will
+appear. When a cluster is selected, the application shows a list of authors that
+belong to that cluster.
+
+
+\section{Evaluation}
+
+
+REDI puede responder a una serie de preguntas.
+
+
+
+
+Se ha seleccionado 5 tematicas de investigacion sobre las cuales se han de buscar los autores que trabajen en esas determinadas areas de investigacion. Por el momento se han analizado a areas dentro de las tecnologias de la informacion y comunicacion
+
+
+Linked Data
+Cuales son los autores y coautores en esta categoria?
+Cuales son los autores identificados por clustering?
+Precision Recall
+
+
+Redes Neuronales
+
+Ingenieria de Software
+
+
+Tecnologia Movil
+
+
+
+
+
+
+
+
+La seleccion de estas tematicas fue al azar
+
+Se analiza con respecto a plataformas diferentes.
+
+El enfoque de REDI es diferente a las otras plataformas
+
+
+Preguntas
+
+Las preguntas considero que deberian basarse en la busqueda de grupos de investigacion, conjuntos, clusters,  mas no a una sola persona en particular, pues SCOPUS o MA ya responde a esos datos.
+
+
+Pregunta 1 
+Pregunta 2 
+Pregunta 3 
+Pregunta 4 
+Pregunta 5 
+
+Se prueba cada una de las preguntas sobrecad auna de las plataformas
+Describor el proceso que se realiza sobre cada una de ella.
+se calcucla valores de precisión y exhaustividad.
+
+
+
+
+
+
+\subsection{Pruebas de carga y consulta sobre el repositorio}
+
+Una vez finalizado el proceso de importación de cada una de las fuentes de
+datos, se procedió a comprobar las respuestas de la plataforma a diferentes
+consultas SPARQL generadas en base al modelo semántico creado. Estas consultas
+se corresponden con las preguntas de competencia utilizadas al momento de
+generar la red de ontologías. Este procedimiento es una de las formas de
+comprobar que la ontología cumple los propósitos para la cual fue creada.
+
+La figura \ref{fig:consultapersonas} muestra la consulta y  resultado de las 50
+primeras personas registradas en el grafo central. Los datos mostrados en la
+lista se corresponden con:
+
+\begin{itemize}
+  \item ?name: Nombre completo de la persona.
+  \item ?firstName: Nombre de la persona.
+  \item ?lastName:  Apellido de la persona.
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.3]{consultapersonas}
+\caption{Consulta del nombre de 50 Personas}
+\label{fig:consultapersonas}
+\end{figure}
+
+La figura \ref{fig:consultapublicaciones}  muestra la consulta y resultado de 10
+publicaciones que tiene como autor a "VICTOR SAQUICELA". Las variables mostradas
+en esta consultan son:
+
+\begin{itemize}
+  \item ?author: Nombre del Autor de las publicaciones.
+  \item ?tituloPublicacion: Título de la publicación del autor.
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.3]{consultapublicaciones}
+\caption{Consulta de las publicaciones de ``Víctor Saquicela''}
+\label{fig:consultapublicaciones}
+\end{figure}
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Conclusión}
+The conclusion goes here.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+
+% use section* for acknowledgment
+\ifCLASSOPTIONcompsoc
+  % The Computer Society usually uses the plural form
+  \section*{Acknowledgments}
+\else
+  % regular IEEE prefers the singular form
+  \section*{Acknowledgment}
+\fi
+
+
+The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+\bibliographystyle{MaskanaStyle}
+\bibliography{CLEI_2016}
+
+
+% that's all folks
+\end{document}
+
+

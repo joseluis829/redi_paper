@@ -1,0 +1,41 @@
+
+Fuente: 
+
+http://www.ieee.org/conferences_events/conferences/publishing/templates.html
+
+
+Informacion del CLEI 2015
+
+https://sites.google.com/a/spc.org.pe/clei2015/autores/llamado-a-trabajos
+
+
+Los trabajos pueden ser escritos en castellano, portugués o inglés, y deben ser enviados en formato PDF utilizando la plataforma JEMS, tomando como referencia el formato para artículos del IEEE (Manuscript Templates for Conference Proceedings) en tamaño carta (8.5″ x 11″). Los títulos de las figuras deben ser centrados por debajo de éstas. Los títulos de las tablas deben ser centrados por encima de éstas.
+ 
+Los trabajos que se propongan deben presentar resultados de investigación originales o reportes con experiencias relevantes, y no deben estar publicados ni en proceso de evaluación para otras conferencias y/o revistas. Un artículo puede ser enviado a un solo simposio o evento asociado. El envío de un mismo artículo a varios de los simposios o eventos asociados dará base para que sea rechazado.
+Los trabajos presentados deben tener una extensión máxima de 12 páginas, incluyendo figuras, referencias bibliográficas y un resumen de hasta 150 palabras en el idioma oficial aceptado en CLEI 2015 (castellano, portugués e inglés). Si los trabajos enviados están escritos en castellano o portugués, deben tener un resumen/abstract en inglés. El formato de referencia para el envío es el estándar del IEEE (Manuscript Templates for Conference Proceedings).
+
+Los trabajos enviados deberán ser contribuciones intelectuales sustanciales de los autores y seguir las prácticas para evitar el plagio incluidas en el Código de Conducta de Autores de CLEI.
+
+El programa final y las actas solo incluirán trabajos con al menos un autor inscrito en la categoría AUTOR en la conferencia antes de la fecha límite para el envío de la versión final.
+
+Una selección de los mejores trabajos aceptados y presentados en los Simposios del CLEI 2015 serán propuestos para su publicación en diversas revistas como CLEI Electronic Journal y Electronic Notes in Theoretical Computer Science. Los autores invitados deberán presentar una versión mejorada y ampliada en inglés que pasará un nuevo proceso de evaluación.
+
+Sólo los artículos aceptados y presentados en los Simposios del CLEI 2015 serán indexados y publicados por IEEE Xplorer digital library (en trámite).
+
+
+
+
+Informacion del CLEI 2014
+
+
+http://clei.org/clei2014/call-for-papers/index.html
+
+
+Papers can be written in Spanish, Portuguese or English, and should be sent in PDF format using the EasyChair platform, following the IEEE formating recommendations (Manuscript Templates for Conference Proceedings) with a size of US letter (8.5″ x 11″). Caption of figures must be centered bellow them.  Caption of tables must be centered above them.
+
+Submitted papers must present original research results or relevant experience reports, and should not be published or under evaluation for other conferences and/or journals. An article can be sent to only one symposium or associated event. Submitting the same article to several symposia or associated events will be basis for rejection.
+Submissions should not exceed 12 pages, including figures, references and an abstract of 150 words in the official language accepted by CLEI 2014 (Spanish, Portuguese and English). If the submissions are written in Spanish or Portuguese, they should have an abstract in English. Submitted papers must be formatted according to IEEE standard (Manuscript Templates for Conference Proceedings).
+Submitted papers must be substantial intellectual contributions of the authors and follow practices to avoid plagiarism as set out in the Operations Manual for Services and Products Publication of IEEE.
+The final program and the proceedings will only include papers with at least one author registered in the AUTHOR category of the conference before final version submission deadline.
+A selection of the best papers accepted and presented at the symposia of CLEI 2014 will be proposed for publication in selected journals such as CLEI Electronic Journal  and Electronic Notes in Theoretical Computer Science. Invited authors must submit an improved and expanded version of the article in English that will undergo a new evaluation process.
+Only papers accepted and presented at the symposia of CLEI 2014 will be indexed and published by IEEE Xplorer digital library (pending).
